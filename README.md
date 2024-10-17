@@ -31,12 +31,12 @@ Capture screenshots of the waveform and save the simulation logs to include in y
 
 Verilog Code for Traffic Light Controller
 
-// traffic_light_controller.v
-module traffic_light_controller (
-    input wire clk,
-    input wire reset,
-    output reg [2:0] lights  // 3-bit output: [2]=Red, [1]=Yellow, [0]=Green
-);
+    // traffic_light_controller.v
+    module traffic_light_controller (
+        input wire clk,
+        input wire reset,
+        output reg [2:0] lights  // 3-bit output: [2]=Red, [1]=Yellow, [0]=Green
+    );
     // Define states
     typedef enum reg [1:0] {
         GREEN = 2'b00,
@@ -83,14 +83,17 @@ module traffic_light_controller (
             end
         endcase
     end
-endmodule
+    endmodule
+
+![WhatsApp Image 2024-10-17 at 19 43 59_f364c652](https://github.com/user-attachments/assets/05806783-a135-41b8-87b7-38d3c3b2b13e)
+
 
 Testbench for Traffic Light Controller
 
 // traffic_light_controller_tb.v
 `timescale 1ns / 1ps
 
-module traffic_light_controller_tb;
+    module traffic_light_controller_tb;
 
     // Inputs
     reg clk;
@@ -127,7 +130,9 @@ module traffic_light_controller_tb;
         $monitor("Time=%0t | Lights (R Y G) = %b", $time, lights);
     end
 
-endmodule
+    endmodule
+
+![WhatsApp Image 2024-10-17 at 19 46 29_1f6a0d7f](https://github.com/user-attachments/assets/bc95b63b-47d5-4b35-aacb-05ea08d9a368)
 
 
 Conclusion
